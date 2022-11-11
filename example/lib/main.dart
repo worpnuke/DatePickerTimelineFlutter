@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: MyHomePage(title: 'Date Picker Timeline Demo'),
     );
@@ -29,27 +29,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   DateTime _selectedValue = DateTime.now();
 
-
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _controller.animateToSelection());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.replay),
-        onPressed: () {
-          _controller.animateToSelection();
-        },
-      ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.replay),
+          onPressed: () {
+            _controller.animateToSelection();
+          },
+        ),
         appBar: AppBar(
           title: Text(widget.title!),
         ),
         body: Container(
-          padding: EdgeInsets.all(20.0),
-          color: Colors.blueGrey[100],
+          padding: EdgeInsets.all(0.0),
+          // color: Colors.blueGrey[100],
+          color: Colors.white,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -63,18 +65,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Container(
                 child: DatePicker(
-                  DateTime.now(),
-                  width: 60,
-                  height: 80,
+                  DateTime.now().subtract(const Duration(days: 100)),
+                  width: 53,
+                  height: 102,
                   controller: _controller,
                   initialSelectedDate: DateTime.now(),
-                  selectionColor: Colors.black,
+                  selectionColor: Color.fromRGBO(255, 0, 0, 1),
                   selectedTextColor: Colors.white,
-                  inactiveDates: [
-                    DateTime.now().add(Duration(days: 3)),
-                    DateTime.now().add(Duration(days: 4)),
-                    DateTime.now().add(Duration(days: 7))
-                  ],
+                  // daysCount: 1000,
+                  // inactiveDates: [
+                  //   DateTime.now().add(Duration(days: 3)),
+                  //   DateTime.now().add(Duration(days: 4)),
+                  //   DateTime.now().add(Duration(days: 7))
+                  // ],
                   onDateChange: (date) {
                     // New date selected
                     setState(() {

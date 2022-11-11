@@ -34,22 +34,67 @@ class DateWidget extends StatelessWidget {
       child: Container(
         width: width,
         margin: EdgeInsets.all(3.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          color: selectionColor,
-        ),
+        // decoration: BoxDecoration(
+        //   borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        //   color: selectionColor,
+        // ),
         child: Padding(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.all(3),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(new DateFormat("MMM", locale).format(date).toUpperCase(), // Month
-                  style: monthTextStyle),
-              Text(date.day.toString(), // Date
-                  style: dateTextStyle),
-              Text(new DateFormat("E", locale).format(date).toUpperCase(), // WeekDay
-                  style: dayTextStyle)
+              Text(
+                  new DateFormat("E", locale)
+                      .format(date)
+                      .toUpperCase()[0], // WeekDay
+                  style: dayTextStyle),
+              // SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+              ),
+              Expanded(
+                  child: Container(
+                      width: width,
+                      margin: EdgeInsets.all(2.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.red,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 7,
+                              color: selectionColor,
+                              offset: Offset(0, 0))
+                        ],
+                        color: selectionColor,
+                      ),
+                      child: Padding(
+                          padding: EdgeInsets.all(0),
+                          child: Column(
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              CircleAvatar(
+                                radius: 20,
+                                backgroundColor: selectionColor,
+                                // child: CircleAvatar(
+                                // backgroundColor: Colors.white,
+                                // radius: 16,
+                                child: Text(date.day.toString(), // Date
+                                    style: dateTextStyle),
+                                // ),
+                              )
+                            ],
+                          ))))
+
+              // Text(
+              //     new DateFormat("MMM", locale)
+              //         .format(date)
+              //         .toUpperCase(), // Month
+              //     style: monthTextStyle),
             ],
           ),
         ),

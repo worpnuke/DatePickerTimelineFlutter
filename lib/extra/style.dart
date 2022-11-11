@@ -17,5 +17,6 @@ const TextStyle defaultDateTextStyle = TextStyle(
 const TextStyle defaultDayTextStyle = TextStyle(
   color: AppColors.defaultDayColor,
   fontSize: Dimen.dayTextSize,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w700,
+  // fontWeight: FontWeight.w500,
 );
