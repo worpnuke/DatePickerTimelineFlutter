@@ -5,6 +5,7 @@
 /// github: https://github.com/iamvivekkaushik/
 /// ***
 
+import 'package:date_picker_timeline/extra/color.dart';
 import 'package:date_picker_timeline/gestures/tap.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -51,7 +52,7 @@ class DateWidget extends StatelessWidget {
                   style: dayTextStyle),
               // SizedBox(height: 10),
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
               ),
               Expanded(
                   child: Container(
@@ -59,15 +60,15 @@ class DateWidget extends StatelessWidget {
                       margin: EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Colors.red,
+                          color: selectionColor,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                         boxShadow: [
                           BoxShadow(
-                              blurRadius: 20,
+                              blurRadius: 5,
                               color: Color(0xffE59999),
-                              offset: Offset(0, 3))
+                              offset: Offset(0, 0))
                         ],
                         color: selectionColor,
                       ),
