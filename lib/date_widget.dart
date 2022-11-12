@@ -51,7 +51,7 @@ class DateWidget extends StatelessWidget {
                   style: dayTextStyle),
               // SizedBox(height: 10),
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               ),
               Expanded(
                   child: Container(
@@ -65,9 +65,9 @@ class DateWidget extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                         boxShadow: [
                           BoxShadow(
-                              blurRadius: 7,
-                              color: selectionColor,
-                              offset: Offset(0, 0))
+                              blurRadius: 20,
+                              color: Color(0xffE59999),
+                              offset: Offset(0, 3))
                         ],
                         color: selectionColor,
                       ),
