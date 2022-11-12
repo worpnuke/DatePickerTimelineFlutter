@@ -67,7 +67,7 @@ class DateWidget extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                               blurRadius: 5,
-                              color: Color(0xffE59999),
+                              color: Color.fromRGBO(229, 153, 153, 1),
                               offset: Offset(0, 0))
                         ],
                         color: selectionColor,
