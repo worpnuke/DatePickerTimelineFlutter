@@ -52,7 +52,7 @@ class DateWidget extends StatelessWidget {
                   style: dayTextStyle),
               // SizedBox(height: 10),
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               ),
               Expanded(
                   child: Container(
@@ -60,14 +60,14 @@ class DateWidget extends StatelessWidget {
                       margin: EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: selectionColor,
+                          color: Colors.red,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                         boxShadow: [
                           BoxShadow(
-                              blurRadius: 5,
-                              color: Color.fromRGBO(229, 153, 153, 1),
+                              blurRadius: 4,
+                              color: selectionColor,
                               offset: Offset(0, 0))
                         ],
                         color: selectionColor,
@@ -75,11 +75,11 @@ class DateWidget extends StatelessWidget {
                       child: Padding(
                           padding: EdgeInsets.all(0),
                           child: Column(
-                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               CircleAvatar(
-                                radius: 20,
+                                radius: 18,
                                 backgroundColor: selectionColor,
                                 // child: CircleAvatar(
                                 // backgroundColor: Colors.white,
@@ -89,13 +89,16 @@ class DateWidget extends StatelessWidget {
                                 // ),
                               )
                             ],
-                          ))))
+                          )))),
 
               // Text(
               //     new DateFormat("MMM", locale)
               //         .format(date)
               //         .toUpperCase(), // Month
               //     style: monthTextStyle),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
+              ),
             ],
           ),
         ),
